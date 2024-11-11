@@ -9,10 +9,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
 
+import com.aventstack.extentreports.ExtentReports;
+
 public class Baseclass {
 	
 	
 	public static WebDriver driver;
+	
+	public static ExtentReports report;
 	
 	@BeforeClass
 	public void openBrowser() throws IOException {

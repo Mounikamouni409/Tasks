@@ -18,7 +18,17 @@ public class ElementsTest extends Baseclass {
 		e.current_Address();
 		e.permanent_Address();
 		e.submit_Data();
+		e.getOutput();
+		
+		
+		e.clickCheckbox();
+		e.clickToggle();
+		e.selectCheckbox();
+		
+		e.radioButton();
 		
 	}
+	
+	
 
 }
