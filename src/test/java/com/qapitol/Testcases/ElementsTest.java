@@ -27,6 +27,8 @@ public class ElementsTest extends Baseclass {
 		
 		e.radioButton();
 		
+		e.webtables();
+		
 	}
 	
 	

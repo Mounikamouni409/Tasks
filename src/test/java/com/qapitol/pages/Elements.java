@@ -45,6 +45,19 @@ public class Elements extends Utilities {
 	
 	By click_yes = By.xpath("//label[@for='yesRadio']");
 	
+	
+	//WebTables
+	
+	By webTables = By.xpath("//span[text()='Web Tables']");
+	By add = By.id("addNewRecordButton");
+	By firstname = By.id("firstName");
+	By lastname = By.id("lastName");
+	By userEmail =By.id("userEmail");
+	By age = By.id("age");
+	By salary = By.id("salary");
+	By depart = By.id("department");
+	By submit_web = By.id("submit");
+	
 	public void elements() {
 
 		javascriptByScroll(0, 200);
@@ -133,6 +146,8 @@ public class Elements extends Utilities {
 		getText(resultCheckBox);
 	}
 	
+	// Radio Button
+	
 	public void radioButton() {
 		WebElement clickradio = driver.findElement(button);
 		clickMethod(clickradio);
@@ -162,6 +177,44 @@ public class Elements extends Utilities {
             }
         }*/
 		
+		
+		
+		
+	}
+	
+	// WebTables
+	
+	public void webtables() {
+		
+		WebElement table = driver.findElement(webTables);
+		clickMethod(table);
+		
+		WebElement click_add = driver.findElement(add);
+		clickMethod(click_add);
+		
+		WebElement firstName = driver.findElement(firstname);
+		sendkeysMethod(firstName, "Mounika");
+		
+		WebElement lastName = driver.findElement(lastname);
+		sendkeysMethod(lastName, "Patnam");
+		
+		WebElement emailElement = driver.findElement(userEmail);
+		sendkeysMethod(emailElement, "mounika@gmail.com");
+		
+		WebElement enter_age = driver.findElement(age);
+		sendkeysMethod(enter_age, "25");
+		
+		WebElement enter_salary = driver.findElement(salary);
+		sendkeysMethod(enter_salary, "387828");
+		
+		WebElement department = driver.findElement(depart);
+		sendkeysMethod(department, "Engineering");
+		javascriptByScroll(985, 432);
+		
+		
+		WebElement submit = driver.findElement(submit_web);
+		WaitForElementToBeVisible(driver, 5, submit);
+	    clickMethod(submit);
 		
 	}
 }
