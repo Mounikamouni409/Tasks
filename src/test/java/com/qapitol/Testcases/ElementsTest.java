@@ -7,7 +7,7 @@ import com.qaptiol.base.Baseclass;
 
 public class ElementsTest extends Baseclass {
 	
-	@Test
+	@Test(priority=1)
 	public void elementActions(){
 		
 		Elements e = new Elements(driver);
@@ -28,6 +28,8 @@ public class ElementsTest extends Baseclass {
 		e.radioButton();
 		
 		e.webtables();
+		
+		e.buttonsTab();
 		
 	}
 	

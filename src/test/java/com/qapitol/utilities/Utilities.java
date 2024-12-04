@@ -1,6 +1,7 @@
 package com.qapitol.utilities;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -8,6 +9,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.qaptiol.base.Baseclass;
@@ -75,10 +77,17 @@ public class Utilities extends Baseclass {
 
 	}
 
-	public static void wait1() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
-		wait.until(
-				ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//div[@class='avatar mx-auto white']"))));
-	}
+	//generic method of dropdown
+		public void selectByOptionText(Select dropdown, String optionText) {
+	        List<WebElement> options = dropdown.getOptions();
+	      //System.out.println(options.size()); to get size
+	        for (WebElement element : options) {
+	        	//System.out.println(element.getText());//to get all text 
+	            if (element.getText().equalsIgnoreCase(optionText)) {
+	            	element.click();
+	                break; 
+	            }
+	           
+	        }
+		}
 }

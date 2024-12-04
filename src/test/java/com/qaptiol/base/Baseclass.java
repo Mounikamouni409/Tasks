@@ -7,16 +7,22 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.qapitol.utilities.ExtentManager;
 
 public class Baseclass {
 	
 	
 	public static WebDriver driver;
 	
-	public static ExtentReports report;
+	public static ExtentReports report = ExtentManager.getInstance();
+	public static ExtentTest test;
+	
+
 	
 	@BeforeClass
 	public void openBrowser() throws IOException {
@@ -35,6 +41,7 @@ public class Baseclass {
 	
 	/*@AfterClass
 	public void closeBrowser() {
+		report.flush();
 		driver.quit();
 	}*/
 
